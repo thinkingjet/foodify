@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Food Tracker</title>
+  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="css/styles.min.css">
+</head>
+<body>
+  <div class="container no-padding">
+
+
+    <div id="start-screen" class="row">
+      <div class="col-xs-12 center-block">
+      <h1></h1>
+      <img src="images/list.png" alt="list">
+      <h1>Food Tracker</h1>
+      <button type="button" class="btn btn-success">Start App</button>
+      </div>
+    </div>
+
+
+    <main id="app" class="row row-centered no-gutter">
+
+      <section class="col-xs-6 col-centered eqHeights">
+
+        <ul id="app-tabs" class="nav nav-tabs">
+          <li role="presentation" class="active"><a id="tab1" href="#search">Search</a></li>
+          <li role="presentation"><a id="tab2" href="#tracker">Tracker</a></li>
+        </ul>
+
+        <div class="tab-content">
+
+          <div role="tabpanel" class="tab-pane active" id="search">
+            <div id="search-top">
+              <header>
+                <h3>Food Search</h3>
+                <span class="btn-group">
+                  <button type="button" id="search-help" title="Help">
+                    <i class="glyphicon glyphicon-question-sign"></i>
+                  </button>
+                </span>
+              </header>
+  
+              <div class="alert alert-info" id="search-help-text">
+                <button type="button" class="close" aria-label="Close">
+                  <span aria-hidden="true" class="glyphicon glyphicon-remove-circle"></span>
+                </button>
+                <h4><i class="glyphicon glyphicon-question-sign"></i> Help</h4>
+                <b>Search with autocomplete</b>
+                <ol>
+                  <li>While typing a drop menu with food suggestions will display.</li>
+                  <li>Select an option to search.</li>
+                </ol>
+                <b>Close the autocomplete</b>
+                <ol>
+                  <li>Press Esc or</li>
+                  <li>Click outside the search box or</li>
+                  <li>Click the <i class="glyphicon glyphicon-remove-circle"></i> clear button</li>
+                </ol>
+              </div>
+      
+              <form id="search-suggest" autocomplete="off"></form>
+            </div>
+            <div id="search-results"></div>
+            <div id="recipe-top">
+              <h3>Recipe Suggestions</h3>
+              <span id="recipe-close" class="glyphicon glyphicon-remove-circle"></span>
+            </div>
+            <div id="recipe-results"></div>
+          </div>
+
+          <div role="tabpanel" class="tab-pane" id="tracker">
+            <div id="tracker-top">
+              <header>
+                <h3>Food Tracker</h3>
+              
+                <div class="btn-group">
+                  <button id="dtDisplay" class="dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="Options">
+                    <i class="glyphicon glyphicon-cog"></i>
+                  </button>
+                  <ul class="dropdown-menu options">
+                    <li><a id="optDate" href="#date">Display by date</a></li>
+                    <li><a id="optAll" href="#all">Display all</a></li>
+                  </ul>
+                </div>
+              </header>
+             
+              <div id="dtContainer">
+                <i id="dtBack" class="glyphicon glyphicon-triangle-left"></i>
+                <input id="dtPicker" class="btn btn-default btn-xs" type="text">
+                <i id="dtForward" class="glyphicon glyphicon-triangle-right"></i>
+              </div>
+            </div>
+            <div id="tracker-results">
+              <p>Nothing is being tracked yet</p>
+              <p>Search and add food items</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <aside id="nutrition" class="col-xs-6 col-centered vtop hideColumn eqHeights overlayColumn">
+
+        <div id="nutrition-button-menu"></div>
+        <div id="nutrition-results" class="flex-container">
+          <div class="flex-item">
+
+            <figure id="gchart"></figure>
+            <br>
+
+            <figure id="nlabel"></figure>
+          </div>
+        </div>
+      </aside>
+
+    </main>
+  </div>
+
+
+  <script src="https://code.jquery.com/jquery-2.2.3.min.js" integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo=" crossorigin="anonymous"></script>
+  <script src="https://www.gstatic.com/charts/loader.js"></script>
+  <script src="js/lib/lib.min.js"></script>
+  <script src="js/nutritionTracker.min.js"></script>
+</body>
+</html>
